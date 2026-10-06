@@ -10,9 +10,9 @@
 <br>
 <br>
 
-<!-- 02: contribution graph (daily workflow se refresh hota hai, public data only) -->
+<!-- 02: contribution graph (daily workflow se refresh hota hai, public data only, static — koi loading animation nahi) -->
 <h3><code>gourab@github ~ $ ./contributions.sh</code></h3>
-<img src="./contrib-heatmap.svg" width="860" alt="Gourab's GitHub contribution graph — auto-refreshed daily" />
+<img src="./contrib-heatmap.svg" width="100%" alt="Gourab's GitHub contribution graph — auto-refreshed daily" />
 
 <br>
 <br>

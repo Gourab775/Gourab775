@@ -7,9 +7,8 @@ The canvas is the same size as the portrait (840 x 880) so the two panels line
 up when the README shows them side by side at equal widths. Fonts are sized for
 that half-width display (~0.5x).
 
-Six stat tiles slide in with their final numbers, then a
-monthly-contributions bar chart grows in underneath. Numbers are rendered
-statically (no count-up timer), since GitHub runs SMIL/CSS inside
+Six stat tiles and a monthly-contributions bar chart, all rendered statically
+(no slide-in, no count-up timer), since GitHub runs SMIL/CSS inside
 <img> SVGs but never JS.
 
     python scripts/render_stats_svg.py [data.json] [output.svg]
@@ -41,13 +40,6 @@ TILE_W = (W - PAD * 2 - GAP * (COLS - 1)) / COLS
 TILE_H = 150
 TILES_TOP = TITLEBAR_H + PAD + 4
 CHART_TOP = TILES_TOP + ROWS * TILE_H + (ROWS - 1) * GAP + GAP
-
-# timing (seconds)
-TILE_STAGGER = 0.15
-SLIDE_DUR = 0.45
-BAR_START = TILE_STAGGER * COLS * ROWS + 0.4
-BAR_STAGGER = 0.06
-BAR_DUR = 0.6
 
 
 def short(d):
@@ -81,13 +73,6 @@ def fmt(v, like):
 parts = [
     f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
     f'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">',
-    '<style>'
-    f'.t{{opacity:0;animation:in {SLIDE_DUR}s ease-out both}}'
-    '@keyframes in{0%{opacity:0;transform:translateY(14px)}100%{opacity:1;transform:translateY(0)}}'
-    f'.b{{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow {BAR_DUR}s ease-out both}}'
-    '@keyframes grow{to{transform:scaleY(1)}}'
-    '@media (prefers-reduced-motion: reduce){.t,.b{opacity:1!important;transform:none!important;animation:none!important}}'
-    '</style>',
     f'<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
     f'<stop offset="0" stop-color="{BG2}"/><stop offset="1" stop-color="{BG}"/></linearGradient></defs>',
     f'<rect width="{W}" height="{H}" rx="12" fill="url(#bg)"/>',
@@ -99,14 +84,13 @@ for i, dot in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
 parts.append(f'<text x="{W/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
              f'text-anchor="middle">gourab@github: ~$ ./stats.sh</text>')
 
-# ---- stat tiles (static final numbers, no count-up timer) ------------------
+# ---- stat tiles (fully static, no slide-in, no count-up) --------------------
 for i, (label, value, suffix, caption, accent) in enumerate(tiles):
     col, row = i % COLS, i // COLS
     x = PAD + col * (TILE_W + GAP)
     y = TILES_TOP + row * (TILE_H + GAP)
-    start = i * TILE_STAGGER
 
-    parts.append(f'<g class="t" style="animation-delay:{start:.2f}s">')
+    parts.append('<g>')
     parts.append(f'<rect x="{x:.1f}" y="{y}" width="{TILE_W:.1f}" height="{TILE_H}" rx="10" '
                  f'fill="{TILE}" stroke="{FRAME}"/>')
     parts.append(f'<text x="{x+24:.1f}" y="{y+40}" fill="{MUTED}" font-size="22">$ {label}</text>')
@@ -120,11 +104,11 @@ for i, (label, value, suffix, caption, accent) in enumerate(tiles):
     parts.append(f'<text x="{x+24:.1f}" y="{y+132}" fill="{MUTED}" font-size="20">{caption}</text>')
     parts.append('</g>')
 
-# ---- monthly bars --------------------------------------------------------
+# ---- monthly bars (fully static, no grow animation) ------------------------
 monthly = data["monthly"]
 chart_x, chart_w = PAD, W - PAD * 2
 chart_h = H - PAD - CHART_TOP
-parts.append(f'<g class="t" style="animation-delay:{BAR_START - 0.3:.2f}s">')
+parts.append('<g>')
 parts.append(f'<rect x="{chart_x}" y="{CHART_TOP}" width="{chart_w}" height="{chart_h}" rx="10" '
              f'fill="{TILE}" stroke="{FRAME}"/>')
 parts.append(f'<text x="{chart_x+24}" y="{CHART_TOP+40}" fill="{MUTED}" font-size="22">$ contributions / month</text>')
@@ -140,14 +124,13 @@ for i, m in enumerate(monthly):
     h = max(2, (plot_bot - plot_top) * m["total"] / peak)
     bx = plot_l + i * slot + (slot - bar_w) / 2
     fill = GREEN if m["total"] == peak else BAR
-    delay = BAR_START + i * BAR_STAGGER
-    parts.append(f'<rect class="b" x="{bx:.1f}" y="{plot_bot - h:.1f}" width="{bar_w:.1f}" height="{h:.1f}" '
-                 f'rx="3" fill="{fill}" style="animation-delay:{delay:.2f}s"/>')
+    parts.append(f'<rect x="{bx:.1f}" y="{plot_bot - h:.1f}" width="{bar_w:.1f}" height="{h:.1f}" '
+                 f'rx="3" fill="{fill}"/>')
     mon = datetime.date.fromisoformat(m["month"] + "-01").strftime("%b")[0]
     parts.append(f'<text x="{bx + bar_w/2:.1f}" y="{plot_bot + 28}" fill="{MUTED}" font-size="18" '
                  f'text-anchor="middle">{mon}</text>')
     if m["total"] == peak:
-        parts.append(f'<text class="t" style="animation-delay:{delay + BAR_DUR:.2f}s" x="{bx + bar_w/2:.1f}" '
+        parts.append(f'<text x="{bx + bar_w/2:.1f}" '
                      f'y="{plot_bot - h - 10:.1f}" fill="{INK}" font-size="18" text-anchor="middle">{peak:,}</text>')
 
 parts.append('</svg>')

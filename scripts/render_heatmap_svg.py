@@ -3,7 +3,7 @@
 Render data/contributions.json (produced by fetch_contributions.py) as a proper
 GitHub-style contribution heatmap SVG: a grid of rounded, colored BOXES in the
 classic 53-week x 7-day calendar, rendered statically (no sweep animation),
-a Less->More legend, and a real stats footer.
+a Less->More legend, and a real stats footer. Bigger cells for a larger graph.
 
 Run by .github/workflows/update-profile-art.yml after fetch_contributions.py.
 """
@@ -18,8 +18,8 @@ OUT_PATH = os.path.join(HERE, "..", "contrib-heatmap.svg")
 # GitHub-ish green ramp: empty -> brightest. Level 5 is a brighter neon top end.
 PALETTE = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353", "#69f0a0"]
 
-CELL = 12
-GAP = 3
+CELL = 14
+GAP = 4
 STEP = CELL + GAP
 PAD = 22
 LEFT_LABEL_W = 30
@@ -117,11 +117,11 @@ def render(data):
 
     for ci, label in month_labels:
         x = grid_left + ci * STEP
-        parts.append(f'<text x="{x}" y="{TITLEBAR_H + 14}" fill="{MUTED}" font-size="10">{label}</text>')
+        parts.append(f'<text x="{x}" y="{TITLEBAR_H + 14}" fill="{MUTED}" font-size="11">{label}</text>')
 
     for wi, wname in [(1, "Mon"), (3, "Wed"), (5, "Fri")]:
         y = grid_top + wi * STEP + CELL * 0.78
-        parts.append(f'<text x="{PAD}" y="{y:.1f}" fill="{MUTED}" font-size="9">{wname}</text>')
+        parts.append(f'<text x="{PAD}" y="{y:.1f}" fill="{MUTED}" font-size="10">{wname}</text>')
 
     # the boxes -- rounded rects, rendered statically (no sweep animation)
     for ci, column in enumerate(grid):
@@ -133,7 +133,7 @@ def render(data):
             gy = grid_top + ri * STEP
             plural = "s" if count != 1 else ""
             parts.append(
-                f'<rect x="{gx}" y="{gy}" width="{CELL}" height="{CELL}" rx="2.5" '
+                f'<rect x="{gx}" y="{gy}" width="{CELL}" height="{CELL}" rx="3" '
                 f'fill="{PALETTE[lvl]}">'
                 f'<title>{date_s}: {count} contribution{plural}</title></rect>'
             )
@@ -141,12 +141,12 @@ def render(data):
     # legend: Less [][][][][] More (bottom-right of the grid)
     leg_y = grid_top + art_h + 6
     leg_x = canvas_w - PAD - (len(PALETTE) * (CELL - 1) + 70)
-    parts.append(f'<text x="{leg_x}" y="{leg_y + CELL*0.8:.1f}" fill="{MUTED}" font-size="10" text-anchor="end">Less</text>')
+    parts.append(f'<text x="{leg_x}" y="{leg_y + CELL*0.8:.1f}" fill="{MUTED}" font-size="11" text-anchor="end">Less</text>')
     lx = leg_x + 8
     for lvl, color in enumerate(PALETTE):
-        parts.append(f'<rect x="{lx}" y="{leg_y}" width="{CELL-1}" height="{CELL-1}" rx="2.2" fill="{color}"/>')
+        parts.append(f'<rect x="{lx}" y="{leg_y}" width="{CELL-1}" height="{CELL-1}" rx="2.5" fill="{color}"/>')
         lx += CELL
-    parts.append(f'<text x="{lx + 4}" y="{leg_y + CELL*0.8:.1f}" fill="{MUTED}" font-size="10">More</text>')
+    parts.append(f'<text x="{lx + 4}" y="{leg_y + CELL*0.8:.1f}" fill="{MUTED}" font-size="11">More</text>')
 
     sep_y = leg_y + CELL + 14
     parts.append(f'<line x1="0" y1="{sep_y}" x2="{canvas_w}" y2="{sep_y}" stroke="{FRAME}" stroke-opacity="0.25"/>')
@@ -159,17 +159,17 @@ def render(data):
 
     ly = sep_y + 24
     # left column: big highlighted numbers; right column: context in muted
-    parts.append(f'<text x="{PAD}" y="{ly}" font-size="13" fill="{GREEN}">'
+    parts.append(f'<text x="{PAD}" y="{ly}" font-size="14" fill="{GREEN}">'
                  f'<tspan font-weight="700">{total:,}</tspan>'
                  f'<tspan fill="{MUTED}"> contributions in the last year</tspan></text>')
-    parts.append(f'<text x="{canvas_w - PAD}" y="{ly}" font-size="12" fill="{MUTED}" text-anchor="end">'
+    parts.append(f'<text x="{canvas_w - PAD}" y="{ly}" font-size="13" fill="{MUTED}" text-anchor="end">'
                  f'{rng["start"]} &#8594; {rng["end"]}</text>')
     ly += 24
-    parts.append(f'<text x="{PAD}" y="{ly}" font-size="13" fill="{MUTED}">current streak '
+    parts.append(f'<text x="{PAD}" y="{ly}" font-size="14" fill="{MUTED}">current streak '
                  f'<tspan fill="{ACCENT}" font-weight="700">{cs} days</tspan>'
                  f'<tspan fill="{MUTED}">   &#183;   longest </tspan>'
                  f'<tspan fill="{ACCENT}" font-weight="700">{ls} days</tspan></text>')
-    parts.append(f'<text x="{canvas_w - PAD}" y="{ly}" font-size="12" fill="{MUTED}" text-anchor="end">'
+    parts.append(f'<text x="{canvas_w - PAD}" y="{ly}" font-size="13" fill="{MUTED}" text-anchor="end">'
                  f'best day <tspan fill="{GOLD}" font-weight="700">{best["count"]}</tspan> on {best["date"]}</text>')
 
     parts.append("</svg>")
