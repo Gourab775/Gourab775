@@ -18,6 +18,15 @@
 
 <br>
 
+<!-- 03: contribution snake (snake.yml workflow se banta hai, output branch me) -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Gourab775/Gourab775/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Gourab775/Gourab775/output/github-snake.svg" />
+  <img width="860" alt="Contribution snake eating commits" src="https://raw.githubusercontent.com/Gourab775/Gourab775/output/github-snake-dark.svg" />
+</picture>
+
+<br>
+
 ## Gourab Neogi
 
 <p>Frontend developer based in Kolkata, India.</p>
@@ -32,9 +41,18 @@
 | Revolvyn Platform | Business site + owner CMS UI | [Live](https://revolvyn-site.vercel.app) · [Code](https://github.com/Gourab775/revolvyn-platform) |
 | FlavorBite QR Menu | Restaurant QR ordering UI, mobile-first | [Live](https://qr-menu-app-gamma.vercel.app) · [Code](https://github.com/Gourab775/flavorbite-menu) |
 | Porsche GT3 3D | Scroll-driven 3D configurator | [Live](https://vary-porsche-gt3.vercel.app) · [Code](https://github.com/Gourab775/porsche-gt3) |
+
+<details>
+<summary><b>More builds</b></summary>
+<br/>
+
+| Project | What it is | Links |
+|---|---|---|
 | Hously Architecture | Architecture site, Next.js + Tailwind | [Code](https://github.com/Gourab775/hously-architecture) |
 | Homie | Property rental UI with motion | [Code](https://github.com/Gourab775/Homie) |
 | MONO | E-commerce store UI | [Code](https://github.com/Gourab775/mono-e-commerce) |
+
+</details>
 
 ---
 
@@ -54,6 +72,6 @@
 </p>
 
 <br/>
-<sub>Top 2 sections refresh daily via GitHub Actions from public data. Portrait source: internet image (Unsplash).</sub>
+<sub>Top sections refresh daily via GitHub Actions from public data. Portrait source: internet image (Unsplash).</sub>
 
 </div>
