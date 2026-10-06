@@ -1,13 +1,23 @@
 <div align="center">
 
-<!-- 01: contribution graph (daily workflow se refresh hota hai, public data only) -->
+<!-- 01: contribution snake (snake.yml workflow se banta hai, output branch me) -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Gourab775/Gourab775/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Gourab775/Gourab775/output/github-snake.svg" />
+  <img width="860" alt="Contribution snake eating commits" src="https://raw.githubusercontent.com/Gourab775/Gourab775/output/github-snake-dark.svg" />
+</picture>
+
+<br>
+<br>
+
+<!-- 02: contribution graph (daily workflow se refresh hota hai, public data only) -->
 <h3><code>gourab@github ~ $ ./contributions.sh</code></h3>
 <img src="./contrib-heatmap.svg" width="860" alt="Gourab's GitHub contribution graph — auto-refreshed daily" />
 
 <br>
 <br>
 
-<!-- 02: portrait + stats (daily workflow se refresh hota hai) -->
+<!-- 03: portrait + stats (daily workflow se refresh hota hai, numbers static — koi count-up timer nahi) -->
 <h3><code>gourab@github ~ $ whoami</code></h3>
 <table>
 <tr>
@@ -15,15 +25,6 @@
 <td valign="top"><img src="./stats.svg" width="420" alt="Gourab's GitHub streak and contribution stats — auto-refreshed daily" /></td>
 </tr>
 </table>
-
-<br>
-
-<!-- 03: contribution snake (snake.yml workflow se banta hai, output branch me) -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Gourab775/Gourab775/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Gourab775/Gourab775/output/github-snake.svg" />
-  <img width="860" alt="Contribution snake eating commits" src="https://raw.githubusercontent.com/Gourab775/Gourab775/output/github-snake-dark.svg" />
-</picture>
 
 <br>
 

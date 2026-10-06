@@ -7,9 +7,9 @@ The canvas is the same size as the portrait (840 x 880) so the two panels line
 up when the README shows them side by side at equal widths. Fonts are sized for
 that half-width display (~0.5x).
 
-Six stat tiles slide in and their numbers count up to the real value, then a
-monthly-contributions bar chart grows in underneath. The count-up is a stack of
-pre-rendered frames toggled with SMIL <set>, since GitHub runs SMIL/CSS inside
+Six stat tiles slide in with their final numbers, then a
+monthly-contributions bar chart grows in underneath. Numbers are rendered
+statically (no count-up timer), since GitHub runs SMIL/CSS inside
 <img> SVGs but never JS.
 
     python scripts/render_stats_svg.py [data.json] [output.svg]
@@ -45,8 +45,6 @@ CHART_TOP = TILES_TOP + ROWS * TILE_H + (ROWS - 1) * GAP + GAP
 # timing (seconds)
 TILE_STAGGER = 0.15
 SLIDE_DUR = 0.45
-COUNT_DUR = 1.2
-FRAMES = 16
 BAR_START = TILE_STAGGER * COLS * ROWS + 0.4
 BAR_STAGGER = 0.06
 BAR_DUR = 0.6
@@ -101,34 +99,24 @@ for i, dot in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
 parts.append(f'<text x="{W/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
              f'text-anchor="middle">gourab@github: ~$ ./stats.sh</text>')
 
-# ---- stat tiles ----------------------------------------------------------
+# ---- stat tiles (static final numbers, no count-up timer) ------------------
 for i, (label, value, suffix, caption, accent) in enumerate(tiles):
     col, row = i % COLS, i // COLS
     x = PAD + col * (TILE_W + GAP)
     y = TILES_TOP + row * (TILE_H + GAP)
     start = i * TILE_STAGGER
-    count_start = start + SLIDE_DUR * 0.6
 
     parts.append(f'<g class="t" style="animation-delay:{start:.2f}s">')
     parts.append(f'<rect x="{x:.1f}" y="{y}" width="{TILE_W:.1f}" height="{TILE_H}" rx="10" '
                  f'fill="{TILE}" stroke="{FRAME}"/>')
     parts.append(f'<text x="{x+24:.1f}" y="{y+40}" fill="{MUTED}" font-size="22">$ {label}</text>')
 
-    # count-up frames: ease-out so it decelerates into the real number
     num_y = y + 100
-    for k in range(1, FRAMES + 1):
-        p = k / FRAMES
-        v = value * (1 - (1 - p) ** 3)
-        t_on = count_start + COUNT_DUR * (k - 1) / FRAMES
-        t_off = count_start + COUNT_DUR * k / FRAMES
-        anim = f'<set attributeName="opacity" to="1" begin="{t_on:.3f}s"/>'
-        if k < FRAMES:
-            anim += f'<set attributeName="opacity" to="0" begin="{t_off:.3f}s"/>'
-        parts.append(
-            f'<text x="{x+24:.1f}" y="{num_y}" opacity="0" font-size="54" font-weight="700" fill="{accent}">'
-            f'{fmt(v, value)}<tspan font-size="24" font-weight="400" fill="{MUTED}">{suffix}</tspan>'
-            f'{anim}</text>'
-        )
+    parts.append(
+        f'<text x="{x+24:.1f}" y="{num_y}" font-size="54" font-weight="700" fill="{accent}">'
+        f'{fmt(value, value)}<tspan font-size="24" font-weight="400" fill="{MUTED}">{suffix}</tspan>'
+        f'</text>'
+    )
     parts.append(f'<text x="{x+24:.1f}" y="{y+132}" fill="{MUTED}" font-size="20">{caption}</text>')
     parts.append('</g>')
 
