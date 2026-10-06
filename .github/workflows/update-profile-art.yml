@@ -1,0 +1,50 @@
+name: Update profile art
+
+# Refreshes the portrait + contribution graph + stats card SVGs from real data.
+# Runs daily, plus whenever you push to main, plus on-demand.
+
+"on":
+  schedule:
+    - cron: "17 6 * * *"   # ~06:17 UTC every day
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  heatmap:
+    runs-on: ubuntu-latest
+    env:
+      GH_PROFILE_USER: Gourab775
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch portrait source image (internet)
+        run: python scripts/fetch_portrait.py
+
+      - name: Scrape real contribution data (no auth needed)
+        run: python scripts/fetch_contributions.py
+
+      - name: Render ASCII portrait SVG
+        run: python scripts/make_ascii_svg.py
+
+      - name: Render animated contribution graph SVG
+        run: python scripts/render_heatmap_svg.py
+
+      - name: Render streak / numbers card
+        run: python scripts/render_stats_svg.py
+
+      - name: Commit updated art
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh profile art [skip ci]"
+          file_pattern: "data/contributions.json contrib-heatmap.svg stats.svg gourab-ascii.svg source-photo.jpg"
