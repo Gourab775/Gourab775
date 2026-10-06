@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1070" viewBox="0 0 1200 1070" role="img" aria-label="Selected projects">
+<title>Selected projects</title>
+<defs>
+<linearGradient id="proj-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B1220"/><stop offset="1" stop-color="#0A0F1A"/></linearGradient>
+<clipPath id="proj-clip"><rect x="0" y="0" width="1200" height="1070" rx="24"/></clipPath>
+<style>
+.font-sans{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+@keyframes projUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.p1{animation:projUp .7s cubic-bezier(.16,1,.3,1) .05s both}
+.p2{animation:projUp .7s cubic-bezier(.16,1,.3,1) .14s both}
+.p3{animation:projUp .7s cubic-bezier(.16,1,.3,1) .23s both}
+.p4{animation:projUp .7s cubic-bezier(.16,1,.3,1) .32s both}
+.p5{animation:projUp .7s cubic-bezier(.16,1,.3,1) .41s both}
+.p6{animation:projUp .7s cubic-bezier(.16,1,.3,1) .5s both}
+.p7{animation:projUp .7s cubic-bezier(.16,1,.3,1) .59s both}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}}
+.card{fill:#0F172A;stroke:#1E293B;stroke-width:1.3}
+</style>
+</defs>
+<rect x="0" y="0" width="1200" height="1070" rx="24" fill="url(#proj-bg)" stroke="#1E293B" stroke-width="1.5"/>
+<g clip-path="url(#proj-clip)">
+<ellipse cx="1080" cy="50" rx="280" ry="120" fill="#5EEAD4" opacity="0.05"/>
+<ellipse cx="120" cy="1020" rx="280" ry="120" fill="#7DD3FC" opacity="0.05"/>
+</g>
+<g class="p1">
+<text x="64" y="64" class="font-mono" font-size="13" letter-spacing="2.5" fill="#5EEAD4">SELECTED WORK</text>
+<text x="64" y="102" class="font-sans" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.8">Projects worth opening</text>
+<text x="64" y="130" class="font-sans" font-size="15" fill="#94A3B8">Six shipped builds — full-stack, AI and 3D. Links below are the live repos + demos.</text>
+</g>
+<!-- 01 -->
+<g class="p2">
+<rect x="64" y="158" width="524" height="252" rx="18" class="card"/>
+<rect x="64" y="158" width="524" height="4" rx="2" fill="#5EEAD4" opacity="0.9"/>
+<text x="96" y="196" class="font-mono" font-size="12.5" fill="#64748B">01 · DASHBOARD</text>
+<circle cx="548" cy="191" r="5" fill="#34D399"/>
+<text x="96" y="228" class="font-sans" font-size="21" font-weight="700" fill="#F1F5F9">Sales Ops Dashboard</text>
+<text x="96" y="256" class="font-sans" font-size="14" fill="#CBD5E1">AI-assisted sales analytics with auth,</text>
+<text x="96" y="278" class="font-sans" font-size="14" fill="#CBD5E1">filters, insights and reports.</text>
+<text x="96" y="308" class="font-mono" font-size="12.5" fill="#7DD3FC">Next.js 16 · Supabase · Clerk · Recharts</text>
+<text x="96" y="338" class="font-mono" font-size="12.5" fill="#5EEAD4">↗ github.com/Gourab775/sales-ops-dashboard</text>
+<text x="96" y="360" class="font-mono" font-size="12.5" fill="#94A3B8">● live: sales-ops-dashboard-rho.vercel.app</text>
+</g>
+<!-- 02 -->
+<g class="p3">
+<rect x="612" y="158" width="524" height="252" rx="18" class="card"/>
+<rect x="612" y="158" width="524" height="4" rx="2" fill="#7DD3FC" opacity="0.9"/>
+<text x="644" y="196" class="font-mono" font-size="12.5" fill="#64748B">02 · CMS + SITE</text>
+<circle cx="1096" cy="191" r="5" fill="#34D399"/>
+<text x="644" y="228" class="font-sans" font-size="21" font-weight="700" fill="#F1F5F9">Revolvyn Platform</text>
+<text x="644" y="256" class="font-sans" font-size="14" fill="#CBD5E1">Public site + Owner CMS on serverless</text>
+<text x="644" y="278" class="font-sans" font-size="14" fill="#CBD5E1">with Neon Postgres and Clerk.</text>
+<text x="644" y="308" class="font-mono" font-size="12.5" fill="#7DD3FC">Vercel · Neon · Clerk · Zod</text>
+<text x="644" y="338" class="font-mono" font-size="12.5" fill="#5EEAD4">↗ github.com/Gourab775/revolvyn-platform</text>
+<text x="644" y="360" class="font-mono" font-size="12.5" fill="#94A3B8">● live: revolvyn-site.vercel.app</text>
+</g>
+<!-- 03 -->
+<g class="p4">
+<rect x="64" y="434" width="524" height="252" rx="18" class="card"/>
+<rect x="64" y="434" width="524" height="4" rx="2" fill="#FCD34D" opacity="0.9"/>
+<text x="96" y="472" class="font-mono" font-size="12.5" fill="#64748B">03 · QR ORDERING</text>
+<circle cx="548" cy="467" r="5" fill="#34D399"/>
+<text x="96" y="504" class="font-sans" font-size="21" font-weight="700" fill="#F1F5F9">FlavorBite QR Menu</text>
+<text x="96" y="532" class="font-sans" font-size="14" fill="#CBD5E1">QR-driven restaurant menus with live</text>
+<text x="96" y="554" class="font-sans" font-size="14" fill="#CBD5E1">dashboard, ordering and Supabase.</text>
+<text x="96" y="584" class="font-mono" font-size="12.5" fill="#7DD3FC">React 19 · Vite · Supabase · Tailwind</text>
+<text x="96" y="614" class="font-mono" font-size="12.5" fill="#5EEAD4">↗ github.com/Gourab775/flavorbite-menu</text>
+<text x="96" y="636" class="font-mono" font-size="12.5" fill="#94A3B8">● live: qr-menu-app-gamma.vercel.app</text>
+</g>
+<!-- 04 -->
+<g class="p5">
+<rect x="612" y="434" width="524" height="252" rx="18" class="card"/>
+<rect x="612" y="434" width="524" height="4" rx="2" fill="#C4B5FD" opacity="0.9"/>
+<text x="644" y="472" class="font-mono" font-size="12.5" fill="#64748B">04 · AI ASSISTANT</text>
+<circle cx="1096" cy="467" r="5" fill="#34D399"/>
+<text x="644" y="504" class="font-sans" font-size="21" font-weight="700" fill="#F1F5F9">Embeddable AI Chat</text>
+<text x="644" y="532" class="font-sans" font-size="14" fill="#CBD5E1">Page-aware chat widget wired to</text>
+<text x="644" y="554" class="font-sans" font-size="14" fill="#CBD5E1">backend APIs with Neon storage.</text>
+<text x="644" y="584" class="font-mono" font-size="12.5" fill="#7DD3FC">Next.js · Neon · Tailwind</text>
+<text x="644" y="614" class="font-mono" font-size="12.5" fill="#5EEAD4">↗ github.com/Gourab775/chat-workspace</text>
+<text x="644" y="636" class="font-mono" font-size="12.5" fill="#94A3B8">● live: ai-chat-assistant-five-blond.vercel.app</text>
+</g>
+<!-- 05 -->
+<g class="p6">
+<rect x="64" y="710" width="524" height="252" rx="18" class="card"/>
+<rect x="64" y="710" width="524" height="4" rx="2" fill="#5EEAD4" opacity="0.9"/>
+<text x="96" y="748" class="font-mono" font-size="12.5" fill="#64748B">05 · AGENCY SITE</text>
+<circle cx="548" cy="743" r="5" fill="#34D399"/>
+<text x="96" y="780" class="font-sans" font-size="21" font-weight="700" fill="#F1F5F9">Agency Website</text>
+<text x="96" y="808" class="font-sans" font-size="14" fill="#CBD5E1">Multi-page agency site with smooth</text>
+<text x="96" y="830" class="font-sans" font-size="14" fill="#CBD5E1">scroll and motion design system.</text>
+<text x="96" y="860" class="font-mono" font-size="12.5" fill="#7DD3FC">Next.js 16 · Motion · Radix UI</text>
+<text x="96" y="890" class="font-mono" font-size="12.5" fill="#5EEAD4">↗ github.com/Gourab775/agency-website</text>
+<text x="96" y="912" class="font-mono" font-size="12.5" fill="#94A3B8">● live: agency-website-one-teal.vercel.app</text>
+</g>
+<!-- 06 -->
+<g class="p6">
+<rect x="612" y="710" width="524" height="252" rx="18" class="card"/>
+<rect x="612" y="710" width="524" height="4" rx="2" fill="#F472B6" opacity="0.9"/>
+<text x="644" y="748" class="font-mono" font-size="12.5" fill="#64748B">06 · 3D SHOWCASE</text>
+<circle cx="1096" cy="743" r="5" fill="#34D399"/>
+<text x="644" y="780" class="font-sans" font-size="21" font-weight="700" fill="#F1F5F9">Porsche GT3 3D</text>
+<text x="644" y="808" class="font-sans" font-size="14" fill="#CBD5E1">Scroll-driven 3D configurator with</text>
+<text x="644" y="830" class="font-sans" font-size="14" fill="#CBD5E1">R3F, Drei and DRACO assets.</text>
+<text x="644" y="860" class="font-mono" font-size="12.5" fill="#7DD3FC">React · Three.js · R3F / Drei</text>
+<text x="644" y="890" class="font-mono" font-size="12.5" fill="#5EEAD4">↗ github.com/Gourab775/porsche-gt3</text>
+<text x="644" y="912" class="font-mono" font-size="12.5" fill="#94A3B8">● live: vary-porsche-gt3.vercel.app</text>
+</g>
+<g class="p7">
+<text x="64" y="1004" class="font-mono" font-size="13" fill="#64748B">SVG text is a preview — every repo + demo is linked as real Markdown below this image in README.</text>
+</g>
+</svg>
