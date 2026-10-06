@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="150" viewBox="0 0 1200 150" role="img" aria-label="Tech stack live ticker">
+<title>Stack — live ticker</title>
+<defs>
+<linearGradient id="tk-bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0B1220"/><stop offset="1" stop-color="#0A0F1A"/>
+</linearGradient>
+<linearGradient id="tk-fade-l" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#0A0F1A"/><stop offset="1" stop-color="#0A0F1A" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="tk-fade-r" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#0A0F1A" stop-opacity="0"/><stop offset="1" stop-color="#0A0F1A"/>
+</linearGradient>
+<clipPath id="tk-clip"><rect x="0" y="58" width="1200" height="58" rx="8"/></clipPath>
+<style>
+.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.font-sans{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+@keyframes tkUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.tk-in{animation:tkUp .7s cubic-bezier(.16,1,.3,1) .05s both}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}}
+.pill{fill:#0F172A;stroke:#1E293B;stroke-width:1.2}
+.plabel{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size="13.5px"}
+</style>
+<g id="tk-set">
+<rect x="24" y="66" width="150" height="40" rx="20" class="pill"/><circle cx="46" cy="86" r="5" fill="#22d3ee"/><text x="58" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">HTML5</text>
+<rect x="190" y="66" width="150" height="40" rx="20" class="pill"/><circle cx="212" cy="86" r="5" fill="#7DD3FC"/><text x="224" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">CSS3</text>
+<rect x="356" y="66" width="170" height="40" rx="20" class="pill"/><circle cx="378" cy="86" r="5" fill="#C4B5FD"/><text x="390" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">JavaScript</text>
+<rect x="542" y="66" width="170" height="40" rx="20" class="pill"/><circle cx="564" cy="86" r="5" fill="#FCD34D"/><text x="576" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">TypeScript</text>
+<rect x="728" y="66" width="160" height="40" rx="20" class="pill"/><circle cx="750" cy="86" r="5" fill="#22d3ee"/><text x="762" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">React 19</text>
+<rect x="904" y="66" width="170" height="40" rx="20" class="pill"/><circle cx="926" cy="86" r="5" fill="#7DD3FC"/><text x="938" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">Next.js 16</text>
+<rect x="1090" y="66" width="170" height="40" rx="20" class="pill"/><circle cx="1112" cy="86" r="5" fill="#C4B5FD"/><text x="1124" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">Tailwind v4</text>
+<rect x="1276" y="66" width="190" height="40" rx="20" class="pill"/><circle cx="1298" cy="86" r="5" fill="#FCD34D"/><text x="1310" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">Framer Motion</text>
+<rect x="1482" y="66" width="160" height="40" rx="20" class="pill"/><circle cx="1504" cy="86" r="5" fill="#22d3ee"/><text x="1516" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">Three.js</text>
+<rect x="1658" y="66" width="150" height="40" rx="20" class="pill"/><circle cx="1680" cy="86" r="5" fill="#7DD3FC"/><text x="1692" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">Figma</text>
+<rect x="1824" y="66" width="170" height="40" rx="20" class="pill"/><circle cx="1846" cy="86" r="5" fill="#C4B5FD"/><text x="1858" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">Supabase</text>
+<rect x="2010" y="66" width="150" height="40" rx="20" class="pill"/><circle cx="2032" cy="86" r="5" fill="#FCD34D"/><text x="2044" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">Vercel</text>
+</g>
+</defs>
+<rect x="0" y="0" width="1200" height="150" rx="18" fill="url(#tk-bg)" stroke="#1E293B" stroke-width="1.5"/>
+<g class="tk-in">
+<circle cx="84" cy="32" r="5" fill="#34D399"/>
+<text x="98" y="37" class="font-mono" font-size="13" letter-spacing="2" fill="#22d3ee">STACK · LIVE TICKER</text>
+<text x="1136" y="37" class="font-mono" font-size="12.5" fill="#64748B" text-anchor="end">12 tools · infinite scroll</text>
+</g>
+<g clip-path="url(#tk-clip)">
+<g>
+<animateTransform attributeName="transform" type="translate" from="0 0" to="-2160 0" dur="26s" repeatCount="indefinite"/>
+<use href="#tk-set"/>
+<use href="#tk-set" x="2160"/>
+</g>
+<rect x="0" y="58" width="130" height="58" fill="url(#tk-fade-l)"/>
+<rect x="1070" y="58" width="130" height="58" fill="url(#tk-fade-r)"/>
+</g>
+<text x="600" y="136" class="font-sans" font-size="12.5" fill="#64748B" text-anchor="middle">HTML · CSS · JS · TS · React · Next · Tailwind · Motion · Three · Figma · Supabase · Vercel</text>
+</svg>

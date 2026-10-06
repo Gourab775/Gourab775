@@ -27,6 +27,12 @@
 
 <br>
 
+<!-- NEW: premium animated hero (self-hosted SVG: floating orbs, shine bar, blinking cursor, floating pills) -->
+<img src="./assets/frontend-hero.svg" width="860" alt="Premium Frontend Designer and Developer — animated hero" />
+
+<br>
+<br>
+
 <!-- NEW: smooth typing animation — frontend positioning -->
 <a href="https://github.com/Gourab775">
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=22D3EE&center=true&vCenter=true&width=860&lines=Frontend+Web+Designer+%26+Developer;Pixel-Perfect+%7C+Responsive+%7C+Animated;React+%E2%80%A2+Next.js+%E2%80%A2+TypeScript+%E2%80%A2+Tailwind;Premium+UI+%2B+Smooth+Motion+%2B+SEO" alt="Typing animation" />
@@ -45,6 +51,11 @@
 
 <h3><code>gourab@github ~ $ ./frontend-stack.sh</code></h3>
 
+<!-- NEW: infinite scrolling tech ticker (self-hosted animated SVG) -->
+<img src="./assets/tech-ticker.svg" width="860" alt="Tech stack ticker — animated" />
+
+<br>
+
 <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,tailwind,framer,threejs,figma,supabase,vercel,git,vscode&theme=dark" alt="Frontend stack" />
 
 <br>
@@ -62,6 +73,8 @@
 
 <br>
 <br>
+
+<img src="./assets/divider-neon.svg" width="860" alt="" />
 
 <h3><code>gourab@github ~ $ ./featured-builds.sh</code></h3>
 <p><sub>Live frontend builds — design, responsiveness & motion pe focus. Code public hai, activity me repo-wise detail nahi dikhata.</sub></p>
@@ -130,6 +143,8 @@
 
 <br>
 
+<img src="./assets/divider-neon.svg" width="860" alt="" />
+
 <h3><code>gourab@github ~ $ ./ui-craft.sh</code></h3>
 
 <table>
@@ -142,6 +157,8 @@
 </table>
 
 <br>
+
+<img src="./assets/divider-neon.svg" width="860" alt="" />
 
 <h3><code>gourab@github ~ $ ./links.sh</code></h3>
 
