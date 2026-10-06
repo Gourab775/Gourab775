@@ -2,9 +2,8 @@
 """
 Render data/contributions.json (produced by fetch_contributions.py) as a proper
 GitHub-style contribution heatmap SVG: a grid of rounded, colored BOXES in the
-classic 53-week x 7-day calendar, revealed once with a diagonal line-after-line
-slide-down (CSS keyframes, plays on load then freezes -- no looping "glow"), a
-Less->More legend, and a real stats footer.
+classic 53-week x 7-day calendar, rendered statically (no sweep animation),
+a Less->More legend, and a real stats footer.
 
 Run by .github/workflows/update-profile-art.yml after fetch_contributions.py.
 """
@@ -35,11 +34,6 @@ TEXT = "#e6edf3"
 ACCENT = "#22d3ee"
 GREEN = "#39d353"
 GOLD = "#f2cc60"
-
-# reveal timing (one-shot)
-COL_T = 0.018   # per-column delay contribution (left -> right sweep)
-ROW_T = 0.045   # per-row delay contribution (top -> bottom cascade)
-CELL_DUR = 0.42
 
 
 def level_for(count):
@@ -101,18 +95,9 @@ def render(data):
     stats_h = 88
     canvas_h = TITLEBAR_H + TOP_LABEL_H + art_h + stats_h + PAD
 
-    css = f"""
-@keyframes cell {{
-  0%   {{ opacity: 0; transform: translateY(-6px); }}
-  100% {{ opacity: 1; transform: translateY(0); }}
-}}
-.c {{ opacity: 0; animation: cell {CELL_DUR:.2f}s cubic-bezier(.2,.8,.2,1) both; }}
-""".strip()
-
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{canvas_w}" height="{canvas_h}" '
         f'viewBox="0 0 {canvas_w} {canvas_h}" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">',
-        f'<style>{css}</style>',
         '<defs>'
         f'<linearGradient id="hbg" x1="0" y1="0" x2="0" y2="1">'
         f'<stop offset="0" stop-color="{BG2}"/><stop offset="1" stop-color="{BG}"/></linearGradient>'
@@ -138,7 +123,7 @@ def render(data):
         y = grid_top + wi * STEP + CELL * 0.78
         parts.append(f'<text x="{PAD}" y="{y:.1f}" fill="{MUTED}" font-size="9">{wname}</text>')
 
-    # the boxes -- each a rounded rect, diagonal slide-down reveal (once, freeze)
+    # the boxes -- rounded rects, rendered statically (no sweep animation)
     for ci, column in enumerate(grid):
         gx = grid_left + ci * STEP
         for ri, cell in enumerate(column):
@@ -146,11 +131,10 @@ def render(data):
                 continue
             date_s, count, lvl = cell
             gy = grid_top + ri * STEP
-            delay = ci * COL_T + ri * ROW_T
             plural = "s" if count != 1 else ""
             parts.append(
-                f'<rect class="c" x="{gx}" y="{gy}" width="{CELL}" height="{CELL}" rx="2.5" '
-                f'fill="{PALETTE[lvl]}" style="animation-delay:{delay:.3f}s">'
+                f'<rect x="{gx}" y="{gy}" width="{CELL}" height="{CELL}" rx="2.5" '
+                f'fill="{PALETTE[lvl]}">'
                 f'<title>{date_s}: {count} contribution{plural}</title></rect>'
             )
 
