@@ -1,14 +1,14 @@
 <!-- Gourab Neogi — GitHub profile -->
 <!-- All facts below are verified from public repos. No invented stats, roles or socials. -->
 
-![Hero](./assets/hero.svg?v=1)
+![Hero](./assets/hero.svg?v=2)
 
 > **Gourab Neogi (@Gourab775)** — Full-Stack Developer in Kolkata, India.
-> I build dashboards, AI workspaces and immersive 3D web apps with **Next.js, React, TypeScript, Supabase / Neon** and modern agent stacks. **43 public repos**, all with READMEs and live Vercel demos where listed.
+> I build dashboards, AI workspaces and immersive 3D web apps with **Next.js, React, TypeScript, Supabase / Neon** and modern agent stacks. **43 public repos**, all with READMEs and live Vercel demos where verified.
 
-![About](./assets/about.svg?v=1)
+![About](./assets/about.svg?v=2)
 
-![Stack](./assets/stack.svg?v=1)
+![Stack](./assets/stack.svg?v=2)
 
 <details>
 <summary><strong>Stack in text (for screen readers + fallback)</strong></summary>
@@ -22,13 +22,13 @@
 Detected from `package.json` + READMEs across 48 public repos — only meaningful usage listed.
 </details>
 
-![Projects](./assets/projects.svg?v=1)
+![Projects](./assets/projects.svg?v=2)
 
 ### Selected projects — repos + live demos
 
 | Project | Repo | Live demo |
 |---|---|---|
-| **Sales Ops Dashboard** — AI-assisted sales analytics (Next.js 16, Supabase, Clerk, Recharts) | [Gourab775/sales-ops-dashboard](https://github.com/Gourab775/sales-ops-dashboard) | [sales-ops-dashboard-rho.vercel.app](https://sales-ops-dashboard-rho.vercel.app) |
+| **Sales Ops Dashboard** — AI-assisted sales analytics (Next.js 16, Supabase, Clerk, Recharts) | [Gourab775/sales-ops-dashboard](https://github.com/Gourab775/sales-ops-dashboard) | Live URL listed on GitHub returned 404 on re-check — see repo README to run locally |
 | **Revolvyn Platform** — public site + Owner CMS (Vercel serverless, Neon, Clerk) | [Gourab775/revolvyn-platform](https://github.com/Gourab775/revolvyn-platform) | [revolvyn-site.vercel.app](https://revolvyn-site.vercel.app) |
 | **FlavorBite QR Menu** — QR restaurant menus + dashboard (React 19, Vite, Supabase) | [Gourab775/flavorbite-menu](https://github.com/Gourab775/flavorbite-menu) | [qr-menu-app-gamma.vercel.app](https://qr-menu-app-gamma.vercel.app) |
 | **Embeddable AI Chat** — page-aware chat widget (Next.js, Neon) | [Gourab775/chat-workspace](https://github.com/Gourab775/chat-workspace) | [ai-chat-assistant-five-blond.vercel.app](https://ai-chat-assistant-five-blond.vercel.app) |
@@ -37,12 +37,12 @@ Detected from `package.json` + READMEs across 48 public repos — only meaningfu
 
 More: [FlavorBite Dashboard](https://github.com/Gourab775/flavorbite-dashboard) · [AI Quiz (LangGraph)](https://github.com/Gourab775/quiz-workspace) · [Email Assistant (CrewAI)](https://github.com/Gourab775/inbox-workspace) · [All 43 public repos](https://github.com/Gourab775?tab=repositories)
 
-![Connect](./assets/connect.svg?v=1)
+![Connect](./assets/connect.svg?v=2)
 
 ### Links
 
 - **GitHub:** [@Gourab775](https://github.com/Gourab775) — the only social link I can verify from GitHub. No LinkedIn / X / portfolio / email found in public profile or repos, so none are listed here rather than guessed.
-- **Live work:** every demo above is a verified `homepage` from the GitHub API.
+- **Live work:** every demo above was verified with HTTP 200 except where explicitly marked unverified.
 - **Location:** Kolkata, India · **Org:** Solo
 
 ---
