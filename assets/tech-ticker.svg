@@ -18,7 +18,6 @@
 .tk-in{animation:tkUp .7s cubic-bezier(.16,1,.3,1) .05s both}
 @media (prefers-reduced-motion:reduce){*{animation:none !important}}
 .pill{fill:#0F172A;stroke:#1E293B;stroke-width:1.2}
-.plabel{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size="13.5px"}
 </style>
 <g id="tk-set">
 <rect x="24" y="66" width="150" height="40" rx="20" class="pill"/><circle cx="46" cy="86" r="5" fill="#22d3ee"/><text x="58" y="91" class="font-mono" font-size="13.5" fill="#E2E8F0">HTML5</text>
@@ -43,9 +42,9 @@
 </g>
 <g clip-path="url(#tk-clip)">
 <g>
-<animateTransform attributeName="transform" type="translate" from="0 0" to="-2160 0" dur="26s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" from="0 0" to="-2152 0" dur="26s" repeatCount="indefinite"/>
 <use href="#tk-set"/>
-<use href="#tk-set" x="2160"/>
+<use href="#tk-set" x="2152"/>
 </g>
 <rect x="0" y="58" width="130" height="58" fill="url(#tk-fade-l)"/>
 <rect x="1070" y="58" width="130" height="58" fill="url(#tk-fade-r)"/>
