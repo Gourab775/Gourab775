@@ -10,9 +10,28 @@
 <br>
 <br>
 
-<!-- 02: contribution graph (daily workflow se refresh hota hai, public data only, static — koi loading animation nahi) -->
-<h3><code>gourab@github ~ $ ./contributions.sh</code></h3>
-<img src="./contrib-heatmap.svg?v=2" width="100%" alt="Gourab's GitHub contribution graph — auto-refreshed daily" />
+<!-- 02: live mission deck — interactive + animated (daily workflow se numbers refresh hote hain) -->
+<h3><code>gourab@github ~ $ ./mission-deck --live</code></h3>
+<img src="./assets/live-desk.svg" width="100%" alt="Gourab's live mission deck — animated activity console. Hover bars for exact monthly counts. Numbers auto-refresh daily." />
+
+<details>
+<summary><b>⚡ Interactive — deck ko expand karo</b> <sub>(click · hover bars ↑ · animated)</sub></summary>
+<br/>
+
+**🎯 NOW** — Revolvyn CMS polish · FlavorBite mobile checkout · Porsche GT3 scroll-perf
+
+**🛠️ STACK PULSE** — `React 19` · `Next.js 16` · `TypeScript` · `Tailwind v4` · `Motion` · `Three.js` · `Supabase` · `Vercel`
+
+**📬 FAST LANE** — replies &lt;48h · pick a build below ↓
+
+| Pick | Live | Code |
+|---|---|---|
+| Revolvyn Platform | [Live](https://revolvyn-site.vercel.app) | [Code](https://github.com/Gourab775/revolvyn-platform) |
+| FlavorBite QR Menu | [Live](https://qr-menu-app-gamma.vercel.app) | [Code](https://github.com/Gourab775/flavorbite-menu) |
+| Porsche GT3 3D | [Live](https://vary-porsche-gt3.vercel.app) | [Code](https://github.com/Gourab775/porsche-gt3) |
+
+<sub>Tip: deck ke bars par hover karo — exact monthly counts dikhenge. Numbers daily Actions se refresh hote hain.</sub>
+</details>
 
 <br>
 <br>
